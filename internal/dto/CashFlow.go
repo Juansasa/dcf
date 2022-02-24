@@ -6,67 +6,67 @@ import (
 )
 
 type CashflowAnnualReport struct {
-	FiscalDateEnding                                          string `json:"fiscalDateEnding"`
-	ReportedCurrency                                          string `json:"reportedCurrency"`
-	OperatingCashflow                                         int    `json:"operatingCashflow"`
-	PaymentsForOperatingActivities                            int    `json:"paymentsForOperatingActivities"`
-	ProceedsFromOperatingActivities                           int    `json:"proceedsFromOperatingActivities"`
-	ChangeInOperatingLiabilities                              int    `json:"changeInOperatingLiabilities"`
-	ChangeInOperatingAssets                                   int    `json:"changeInOperatingAssets"`
-	DepreciationDepletionAndAmortization                      int    `json:"depreciationDepletionAndAmortization"`
-	CapitalExpenditures                                       int    `json:"capitalExpenditures"`
-	ChangeInReceivables                                       int    `json:"changeInReceivables"`
-	ChangeInInventory                                         int    `json:"changeInInventory"`
-	ProfitLoss                                                int    `json:"profitLoss"`
-	CashflowFromInvestment                                    int    `json:"cashflowFromInvestment"`
-	CashflowFromFinancing                                     int    `json:"cashflowFromFinancing"`
-	ProceedsFromRepaymentsOfShortTermDebt                     int    `json:"proceedsFromRepaymentsOfShortTermDebt"`
-	PaymentsForRepurchaseOfCommonStock                        int    `json:"paymentsForRepurchaseOfCommonStock"`
-	PaymentsForRepurchaseOfEquity                             int    `json:"paymentsForRepurchaseOfEquity"`
-	PaymentsForRepurchaseOfPreferredStock                     int    `json:"paymentsForRepurchaseOfPreferredStock"`
-	DividendPayout                                            int    `json:"dividendPayout"`
-	DividendPayoutCommonStock                                 int    `json:"dividendPayoutCommonStock"`
-	DividendPayoutPreferredStock                              int    `json:"dividendPayoutPreferredStock"`
-	ProceedsFromIssuanceOfCommonStock                         int    `json:"proceedsFromIssuanceOfCommonStock"`
-	ProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet int    `json:"proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet"`
-	ProceedsFromIssuanceOfPreferredStock                      int    `json:"proceedsFromIssuanceOfPreferredStock"`
-	ProceedsFromRepurchaseOfEquity                            int    `json:"proceedsFromRepurchaseOfEquity"`
-	ProceedsFromSaleOfTreasuryStock                           int    `json:"proceedsFromSaleOfTreasuryStock"`
-	ChangeInCashAndCashEquivalents                            int    `json:"changeInCashAndCashEquivalents"`
-	ChangeInExchangeRate                                      int    `json:"changeInExchangeRate"`
-	NetIncome                                                 int    `json:"netIncome"`
+	FiscalDateEnding                                          string    `json:"fiscalDateEnding"`
+	ReportedCurrency                                          string    `json:"reportedCurrency"`
+	OperatingCashflow                                         StringInt `json:"operatingCashflow"`
+	PaymentsForOperatingActivities                            StringInt `json:"paymentsForOperatingActivities"`
+	ProceedsFromOperatingActivities                           StringInt `json:"proceedsFromOperatingActivities"`
+	ChangeInOperatingLiabilities                              StringInt `json:"changeInOperatingLiabilities"`
+	ChangeInOperatingAssets                                   StringInt `json:"changeInOperatingAssets"`
+	DepreciationDepletionAndAmortization                      StringInt `json:"depreciationDepletionAndAmortization"`
+	CapitalExpenditures                                       StringInt `json:"capitalExpenditures"`
+	ChangeInReceivables                                       StringInt `json:"changeInReceivables"`
+	ChangeInInventory                                         StringInt `json:"changeInInventory"`
+	ProfitLoss                                                StringInt `json:"profitLoss"`
+	CashflowFromInvestment                                    StringInt `json:"cashflowFromInvestment"`
+	CashflowFromFinancing                                     StringInt `json:"cashflowFromFinancing"`
+	ProceedsFromRepaymentsOfShortTermDebt                     StringInt `json:"proceedsFromRepaymentsOfShortTermDebt"`
+	PaymentsForRepurchaseOfCommonStock                        StringInt `json:"paymentsForRepurchaseOfCommonStock"`
+	PaymentsForRepurchaseOfEquity                             StringInt `json:"paymentsForRepurchaseOfEquity"`
+	PaymentsForRepurchaseOfPreferredStock                     StringInt `json:"paymentsForRepurchaseOfPreferredStock"`
+	DividendPayout                                            StringInt `json:"dividendPayout"`
+	DividendPayoutCommonStock                                 StringInt `json:"dividendPayoutCommonStock"`
+	DividendPayoutPreferredStock                              StringInt `json:"dividendPayoutPreferredStock"`
+	ProceedsFromIssuanceOfCommonStock                         StringInt `json:"proceedsFromIssuanceOfCommonStock"`
+	ProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet StringInt `json:"proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet"`
+	ProceedsFromIssuanceOfPreferredStock                      StringInt `json:"proceedsFromIssuanceOfPreferredStock"`
+	ProceedsFromRepurchaseOfEquity                            StringInt `json:"proceedsFromRepurchaseOfEquity"`
+	ProceedsFromSaleOfTreasuryStock                           StringInt `json:"proceedsFromSaleOfTreasuryStock"`
+	ChangeInCashAndCashEquivalents                            StringInt `json:"changeInCashAndCashEquivalents"`
+	ChangeInExchangeRate                                      StringInt `json:"changeInExchangeRate"`
+	NetIncome                                                 StringInt `json:"netIncome"`
 }
 
 type CashflowQuarterlyReport struct {
-	FiscalDateEnding                                          string `json:"fiscalDateEnding"`
-	ReportedCurrency                                          string `json:"reportedCurrency"`
-	OperatingCashflow                                         int    `json:"operatingCashflow"`
-	PaymentsForOperatingActivities                            int    `json:"paymentsForOperatingActivities"`
-	ProceedsFromOperatingActivities                           int    `json:"proceedsFromOperatingActivities"`
-	ChangeInOperatingLiabilities                              int    `json:"changeInOperatingLiabilities"`
-	ChangeInOperatingAssets                                   int    `json:"changeInOperatingAssets"`
-	DepreciationDepletionAndAmortization                      int    `json:"depreciationDepletionAndAmortization"`
-	CapitalExpenditures                                       int    `json:"capitalExpenditures"`
-	ChangeInReceivables                                       int    `json:"changeInReceivables"`
-	ChangeInInventory                                         int    `json:"changeInInventory"`
-	ProfitLoss                                                int    `json:"profitLoss"`
-	CashflowFromInvestment                                    int    `json:"cashflowFromInvestment"`
-	CashflowFromFinancing                                     int    `json:"cashflowFromFinancing"`
-	ProceedsFromRepaymentsOfShortTermDebt                     int    `json:"proceedsFromRepaymentsOfShortTermDebt"`
-	PaymentsForRepurchaseOfCommonStock                        int    `json:"paymentsForRepurchaseOfCommonStock"`
-	PaymentsForRepurchaseOfEquity                             int    `json:"paymentsForRepurchaseOfEquity"`
-	PaymentsForRepurchaseOfPreferredStock                     int    `json:"paymentsForRepurchaseOfPreferredStock"`
-	DividendPayout                                            int    `json:"dividendPayout"`
-	DividendPayoutCommonStock                                 int    `json:"dividendPayoutCommonStock"`
-	DividendPayoutPreferredStock                              int    `json:"dividendPayoutPreferredStock"`
-	ProceedsFromIssuanceOfCommonStock                         int    `json:"proceedsFromIssuanceOfCommonStock"`
-	ProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet int    `json:"proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet"`
-	ProceedsFromIssuanceOfPreferredStock                      int    `json:"proceedsFromIssuanceOfPreferredStock"`
-	ProceedsFromRepurchaseOfEquity                            int    `json:"proceedsFromRepurchaseOfEquity"`
-	ProceedsFromSaleOfTreasuryStock                           int    `json:"proceedsFromSaleOfTreasuryStock"`
-	ChangeInCashAndCashEquivalents                            int    `json:"changeInCashAndCashEquivalents"`
-	ChangeInExchangeRate                                      int    `json:"changeInExchangeRate"`
-	NetIncome                                                 int    `json:"netIncome"`
+	FiscalDateEnding                                          string    `json:"fiscalDateEnding"`
+	ReportedCurrency                                          string    `json:"reportedCurrency"`
+	OperatingCashflow                                         StringInt `json:"operatingCashflow"`
+	PaymentsForOperatingActivities                            StringInt `json:"paymentsForOperatingActivities"`
+	ProceedsFromOperatingActivities                           StringInt `json:"proceedsFromOperatingActivities"`
+	ChangeInOperatingLiabilities                              StringInt `json:"changeInOperatingLiabilities"`
+	ChangeInOperatingAssets                                   StringInt `json:"changeInOperatingAssets"`
+	DepreciationDepletionAndAmortization                      StringInt `json:"depreciationDepletionAndAmortization"`
+	CapitalExpenditures                                       StringInt `json:"capitalExpenditures"`
+	ChangeInReceivables                                       StringInt `json:"changeInReceivables"`
+	ChangeInInventory                                         StringInt `json:"changeInInventory"`
+	ProfitLoss                                                StringInt `json:"profitLoss"`
+	CashflowFromInvestment                                    StringInt `json:"cashflowFromInvestment"`
+	CashflowFromFinancing                                     StringInt `json:"cashflowFromFinancing"`
+	ProceedsFromRepaymentsOfShortTermDebt                     StringInt `json:"proceedsFromRepaymentsOfShortTermDebt"`
+	PaymentsForRepurchaseOfCommonStock                        StringInt `json:"paymentsForRepurchaseOfCommonStock"`
+	PaymentsForRepurchaseOfEquity                             StringInt `json:"paymentsForRepurchaseOfEquity"`
+	PaymentsForRepurchaseOfPreferredStock                     StringInt `json:"paymentsForRepurchaseOfPreferredStock"`
+	DividendPayout                                            StringInt `json:"dividendPayout"`
+	DividendPayoutCommonStock                                 StringInt `json:"dividendPayoutCommonStock"`
+	DividendPayoutPreferredStock                              StringInt `json:"dividendPayoutPreferredStock"`
+	ProceedsFromIssuanceOfCommonStock                         StringInt `json:"proceedsFromIssuanceOfCommonStock"`
+	ProceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet StringInt `json:"proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet"`
+	ProceedsFromIssuanceOfPreferredStock                      StringInt `json:"proceedsFromIssuanceOfPreferredStock"`
+	ProceedsFromRepurchaseOfEquity                            StringInt `json:"proceedsFromRepurchaseOfEquity"`
+	ProceedsFromSaleOfTreasuryStock                           StringInt `json:"proceedsFromSaleOfTreasuryStock"`
+	ChangeInCashAndCashEquivalents                            StringInt `json:"changeInCashAndCashEquivalents"`
+	ChangeInExchangeRate                                      StringInt `json:"changeInExchangeRate"`
+	NetIncome                                                 StringInt `json:"netIncome"`
 }
 
 type CashflowReport struct {
@@ -75,12 +75,15 @@ type CashflowReport struct {
 	QuarterlyReports []CashflowQuarterlyReport `json:"quarterlyReports"`
 }
 
-func (report *CashflowAnnualReport) FreeCashFlow() int {
-	return report.OperatingCashflow - report.CapitalExpenditures
-}
+func (report *CashflowReport) FreeCashFlowTTM() int {
+	cashflowTTM := report.QuarterlyReports[0:4]
+	total := 0
 
-func (report *CashflowQuarterlyReport) FreeCashFlow() int {
-	return report.OperatingCashflow - report.CapitalExpenditures
+	for _, v := range cashflowTTM {
+		total += (int(v.OperatingCashflow) - int(v.CapitalExpenditures))
+	}
+
+	return total
 }
 
 func (report *CashflowReport) Init() error {

@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"dcf-finance.com/v1/api"
+	"dcf-finance.com/v1/internal/dcf"
 	"dcf-finance.com/v1/internal/dto"
 	"dcf-finance.com/v1/internal/utils"
 	"github.com/gin-gonic/gin"
@@ -41,4 +42,30 @@ func GetFinancial(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, gin.H{"response": cashflow})
+}
+
+func GetDCF(c *gin.Context) {
+	ticker := c.Param("ticker")
+	calc := dcf.DCFParameters{
+		Ticker:                ticker,
+		DiscountRate:          0.08,
+		PerpetualGrowthRate:   0.02,
+		ExitCashFlowMultiples: 15,
+		CAGR:                  0.1,
+		Probability:           0.5,
+		ProjectedYears:        5,
+	}
+	summary, err := calc.Summary()
+	if err != nil {
+		c.Error(err)
+	}
+
+	c.IndentedJSON(http.StatusOK, gin.H{
+		"Summary":               summary,
+		"ProjectedCashFlow":     summary.ProjectedCash(),
+		"TerminalPerpetualCash": summary.TerminalPerpetualCash(),
+		"TerminalExitCash":      summary.TerminalExitMultipleCash(),
+		"TerminalCashAverage":   summary.TerminalCash(),
+		"Fair Price":            summary.FairPrice(),
+	})
 }

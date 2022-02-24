@@ -14,6 +14,7 @@ func main() {
 	})
 
 	router.GET("/financial/:ticker/:function", handlers.GetFinancial)
+	router.GET("/dcf/:ticker", handlers.GetDCF)
 
 	router.Run("localhost:8080")
 }

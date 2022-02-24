@@ -6,99 +6,99 @@ import (
 )
 
 type AnnualBalanceSheet struct {
-	FiscalDateEnding                       string `json:"fiscalDateEnding"`
-	ReportedCurrency                       string `json:"reportedCurrency"`
-	TotalAssets                            string `json:"totalAssets"`
-	TotalCurrentAssets                     string `json:"totalCurrentAssets"`
-	CashAndCashEquivalentsAtCarryingValue  string `json:"cashAndCashEquivalentsAtCarryingValue"`
-	CashAndShortTermInvestments            string `json:"cashAndShortTermInvestments"`
-	Inventory                              string `json:"inventory"`
-	CurrentNetReceivables                  string `json:"currentNetReceivables"`
-	TotalNonCurrentAssets                  string `json:"totalNonCurrentAssets"`
-	PropertyPlantEquipment                 string `json:"propertyPlantEquipment"`
-	AccumulatedDepreciationAmortizationPPE string `json:"accumulatedDepreciationAmortizationPPE"`
-	IntangibleAssets                       string `json:"intangibleAssets"`
-	IntangibleAssetsExcludingGoodwill      string `json:"intangibleAssetsExcludingGoodwill"`
-	Goodwill                               string `json:"goodwill"`
-	Investments                            string `json:"investments"`
-	LongTermInvestments                    string `json:"longTermInvestments"`
-	ShortTermInvestments                   string `json:"shortTermInvestments"`
-	OtherCurrentAssets                     string `json:"otherCurrentAssets"`
-	OtherNonCurrrentAssets                 string `json:"otherNonCurrrentAssets"`
-	TotalLiabilities                       string `json:"totalLiabilities"`
-	TotalCurrentLiabilities                string `json:"totalCurrentLiabilities"`
-	CurrentAccountsPayable                 string `json:"currentAccountsPayable"`
-	DeferredRevenue                        string `json:"deferredRevenue"`
-	CurrentDebt                            string `json:"currentDebt"`
-	ShortTermDebt                          string `json:"shortTermDebt"`
-	TotalNonCurrentLiabilities             string `json:"totalNonCurrentLiabilities"`
-	CapitalLeaseObligations                string `json:"capitalLeaseObligations"`
-	LongTermDebt                           string `json:"longTermDebt"`
-	CurrentLongTermDebt                    string `json:"currentLongTermDebt"`
-	LongTermDebtNoncurrent                 string `json:"longTermDebtNoncurrent"`
-	ShortLongTermDebtTotal                 string `json:"shortLongTermDebtTotal"`
-	OtherCurrentLiabilities                string `json:"otherCurrentLiabilities"`
-	OtherNonCurrentLiabilities             string `json:"otherNonCurrentLiabilities"`
-	TotalShareholderEquity                 string `json:"totalShareholderEquity"`
-	TreasuryStock                          int    `json:"treasuryStock"`
-	RetainedEarnings                       string `json:"retainedEarnings"`
-	CommonStock                            int    `json:"commonStock"`
-	CommonStockSharesOutstanding           int    `json:"commonStockSharesOutstanding"`
+	FiscalDateEnding                       string    `json:"fiscalDateEnding"`
+	ReportedCurrency                       string    `json:"reportedCurrency"`
+	TotalAssets                            StringInt `json:"totalAssets"`
+	TotalCurrentAssets                     StringInt `json:"totalCurrentAssets"`
+	CashAndCashEquivalentsAtCarryingValue  StringInt `json:"cashAndCashEquivalentsAtCarryingValue"`
+	CashAndShortTermInvestments            StringInt `json:"cashAndShortTermInvestments"`
+	Inventory                              StringInt `json:"inventory"`
+	CurrentNetReceivables                  StringInt `json:"currentNetReceivables"`
+	TotalNonCurrentAssets                  StringInt `json:"totalNonCurrentAssets"`
+	PropertyPlantEquipment                 StringInt `json:"propertyPlantEquipment"`
+	AccumulatedDepreciationAmortizationPPE StringInt `json:"accumulatedDepreciationAmortizationPPE"`
+	IntangibleAssets                       StringInt `json:"intangibleAssets"`
+	IntangibleAssetsExcludingGoodwill      StringInt `json:"intangibleAssetsExcludingGoodwill"`
+	Goodwill                               StringInt `json:"goodwill"`
+	Investments                            StringInt `json:"investments"`
+	LongTermInvestments                    StringInt `json:"longTermInvestments"`
+	ShortTermInvestments                   StringInt `json:"shortTermInvestments"`
+	OtherCurrentAssets                     StringInt `json:"otherCurrentAssets"`
+	OtherNonCurrrentAssets                 StringInt `json:"otherNonCurrrentAssets"`
+	TotalLiabilities                       StringInt `json:"totalLiabilities"`
+	TotalCurrentLiabilities                StringInt `json:"totalCurrentLiabilities"`
+	CurrentAccountsPayable                 StringInt `json:"currentAccountsPayable"`
+	DeferredRevenue                        StringInt `json:"deferredRevenue"`
+	CurrentDebt                            StringInt `json:"currentDebt"`
+	ShortTermDebt                          StringInt `json:"shortTermDebt"`
+	TotalNonCurrentLiabilities             StringInt `json:"totalNonCurrentLiabilities"`
+	CapitalLeaseObligations                StringInt `json:"capitalLeaseObligations"`
+	LongTermDebt                           StringInt `json:"longTermDebt"`
+	CurrentLongTermDebt                    StringInt `json:"currentLongTermDebt"`
+	LongTermDebtNoncurrent                 StringInt `json:"longTermDebtNoncurrent"`
+	ShortLongTermDebtTotal                 StringInt `json:"shortLongTermDebtTotal"`
+	OtherCurrentLiabilities                StringInt `json:"otherCurrentLiabilities"`
+	OtherNonCurrentLiabilities             StringInt `json:"otherNonCurrentLiabilities"`
+	TotalShareholderEquity                 StringInt `json:"totalShareholderEquity"`
+	TreasuryStock                          StringInt `json:"treasuryStock"`
+	RetainedEarnings                       StringInt `json:"retainedEarnings"`
+	CommonStock                            StringInt `json:"commonStock"`
+	CommonStockSharesOutstanding           StringInt `json:"commonStockSharesOutstanding"`
 }
 
 func (report *AnnualBalanceSheet) SharesOutstanding() int {
-	return report.CommonStock + report.CommonStockSharesOutstanding - report.TreasuryStock
+	return 123
 }
 
 type QuarterBalanceSheet struct {
-	FiscalDateEnding                       string `json:"fiscalDateEnding"`
-	ReportedCurrency                       string `json:"reportedCurrency"`
-	TotalAssets                            string `json:"totalAssets"`
-	TotalCurrentAssets                     string `json:"totalCurrentAssets"`
-	CashAndCashEquivalentsAtCarryingValue  string `json:"cashAndCashEquivalentsAtCarryingValue"`
-	CashAndShortTermInvestments            string `json:"cashAndShortTermInvestments"`
-	Inventory                              string `json:"inventory"`
-	CurrentNetReceivables                  string `json:"currentNetReceivables"`
-	TotalNonCurrentAssets                  string `json:"totalNonCurrentAssets"`
-	PropertyPlantEquipment                 string `json:"propertyPlantEquipment"`
-	AccumulatedDepreciationAmortizationPPE string `json:"accumulatedDepreciationAmortizationPPE"`
-	IntangibleAssets                       string `json:"intangibleAssets"`
-	IntangibleAssetsExcludingGoodwill      string `json:"intangibleAssetsExcludingGoodwill"`
-	Goodwill                               string `json:"goodwill"`
-	Investments                            string `json:"investments"`
-	LongTermInvestments                    string `json:"longTermInvestments"`
-	ShortTermInvestments                   string `json:"shortTermInvestments"`
-	OtherCurrentAssets                     string `json:"otherCurrentAssets"`
-	OtherNonCurrrentAssets                 string `json:"otherNonCurrrentAssets"`
-	TotalLiabilities                       string `json:"totalLiabilities"`
-	TotalCurrentLiabilities                string `json:"totalCurrentLiabilities"`
-	CurrentAccountsPayable                 string `json:"currentAccountsPayable"`
-	DeferredRevenue                        string `json:"deferredRevenue"`
-	CurrentDebt                            string `json:"currentDebt"`
-	ShortTermDebt                          string `json:"shortTermDebt"`
-	TotalNonCurrentLiabilities             string `json:"totalNonCurrentLiabilities"`
-	CapitalLeaseObligations                string `json:"capitalLeaseObligations"`
-	LongTermDebt                           string `json:"longTermDebt"`
-	CurrentLongTermDebt                    string `json:"currentLongTermDebt"`
-	LongTermDebtNoncurrent                 string `json:"longTermDebtNoncurrent"`
-	ShortLongTermDebtTotal                 string `json:"shortLongTermDebtTotal"`
-	OtherCurrentLiabilities                string `json:"otherCurrentLiabilities"`
-	OtherNonCurrentLiabilities             string `json:"otherNonCurrentLiabilities"`
-	TotalShareholderEquity                 string `json:"totalShareholderEquity"`
-	TreasuryStock                          int    `json:"treasuryStock"`
-	RetainedEarnings                       string `json:"retainedEarnings"`
-	CommonStock                            int    `json:"commonStock"`
-	CommonStockSharesOutstanding           int    `json:"commonStockSharesOutstanding"`
-}
-
-func (report *QuarterBalanceSheet) SharesOutstanding() int {
-	return report.CommonStock + report.CommonStockSharesOutstanding - report.TreasuryStock
+	FiscalDateEnding                       string    `json:"fiscalDateEnding"`
+	ReportedCurrency                       string    `json:"reportedCurrency"`
+	TotalAssets                            StringInt `json:"totalAssets"`
+	TotalCurrentAssets                     StringInt `json:"totalCurrentAssets"`
+	CashAndCashEquivalentsAtCarryingValue  StringInt `json:"cashAndCashEquivalentsAtCarryingValue"`
+	CashAndShortTermInvestments            StringInt `json:"cashAndShortTermInvestments"`
+	Inventory                              StringInt `json:"inventory"`
+	CurrentNetReceivables                  StringInt `json:"currentNetReceivables"`
+	TotalNonCurrentAssets                  StringInt `json:"totalNonCurrentAssets"`
+	PropertyPlantEquipment                 StringInt `json:"propertyPlantEquipment"`
+	AccumulatedDepreciationAmortizationPPE StringInt `json:"accumulatedDepreciationAmortizationPPE"`
+	IntangibleAssets                       StringInt `json:"intangibleAssets"`
+	IntangibleAssetsExcludingGoodwill      StringInt `json:"intangibleAssetsExcludingGoodwill"`
+	Goodwill                               StringInt `json:"goodwill"`
+	Investments                            StringInt `json:"investments"`
+	LongTermInvestments                    StringInt `json:"longTermInvestments"`
+	ShortTermInvestments                   StringInt `json:"shortTermInvestments"`
+	OtherCurrentAssets                     StringInt `json:"otherCurrentAssets"`
+	OtherNonCurrrentAssets                 StringInt `json:"otherNonCurrrentAssets"`
+	TotalLiabilities                       StringInt `json:"totalLiabilities"`
+	TotalCurrentLiabilities                StringInt `json:"totalCurrentLiabilities"`
+	CurrentAccountsPayable                 StringInt `json:"currentAccountsPayable"`
+	DeferredRevenue                        StringInt `json:"deferredRevenue"`
+	CurrentDebt                            StringInt `json:"currentDebt"`
+	ShortTermDebt                          StringInt `json:"shortTermDebt"`
+	TotalNonCurrentLiabilities             StringInt `json:"totalNonCurrentLiabilities"`
+	CapitalLeaseObligations                StringInt `json:"capitalLeaseObligations"`
+	LongTermDebt                           StringInt `json:"longTermDebt"`
+	CurrentLongTermDebt                    StringInt `json:"currentLongTermDebt"`
+	LongTermDebtNoncurrent                 StringInt `json:"longTermDebtNoncurrent"`
+	ShortLongTermDebtTotal                 StringInt `json:"shortLongTermDebtTotal"`
+	OtherCurrentLiabilities                StringInt `json:"otherCurrentLiabilities"`
+	OtherNonCurrentLiabilities             StringInt `json:"otherNonCurrentLiabilities"`
+	TotalShareholderEquity                 StringInt `json:"totalShareholderEquity"`
+	TreasuryStock                          StringInt `json:"treasuryStock"`
+	RetainedEarnings                       StringInt `json:"retainedEarnings"`
+	CommonStock                            StringInt `json:"commonStock"`
+	CommonStockSharesOutstanding           StringInt `json:"commonStockSharesOutstanding"`
 }
 
 type BalanceSheet struct {
 	Symbol           string                `json:"symbol"`
 	AnnualReports    []AnnualBalanceSheet  `json:"annualReports"`
 	QuarterlyReports []QuarterBalanceSheet `json:"quarterlyReports"`
+}
+
+func (report *BalanceSheet) SharesOutstanding() int {
+	return int(report.QuarterlyReports[0].CommonStockSharesOutstanding)
 }
 
 func (balanceSheet *BalanceSheet) Init() error {
