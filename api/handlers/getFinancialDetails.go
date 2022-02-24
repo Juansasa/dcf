@@ -46,16 +46,24 @@ func GetFinancial(c *gin.Context) {
 
 func GetDCF(c *gin.Context) {
 	ticker := c.Param("ticker")
-	calc := dcf.DCFParameters{
-		Ticker:                ticker,
-		DiscountRate:          0.08,
-		PerpetualGrowthRate:   0.02,
-		ExitCashFlowMultiples: 15,
-		CAGR:                  0.1,
-		Probability:           0.5,
-		ProjectedYears:        5,
+	dcfParams := dcf.DCFParameters{
+		Ticker: ticker,
+		/*
+			CAGR:                  0.2,
+			Probability:           0.5,
+			DiscountRate:          0.08,
+			PerpetualGrowthRate:   0.02,
+			ExitCashFlowMultiples: 15,
+			ProjectedYears:        5,
+		*/
 	}
-	summary, err := calc.Summary()
+
+	err := c.BindJSON(&dcfParams)
+	if err != nil {
+		c.Error(err)
+	}
+
+	summary, err := dcfParams.Summary()
 	if err != nil {
 		c.Error(err)
 	}
@@ -67,5 +75,7 @@ func GetDCF(c *gin.Context) {
 		"TerminalExitCash":      summary.TerminalExitMultipleCash(),
 		"TerminalCashAverage":   summary.TerminalCash(),
 		"Fair Price":            summary.FairPrice(),
+		"Current Price":         summary.CurrentPrice,
+		"Upside":                summary.Upside(),
 	})
 }

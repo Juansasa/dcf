@@ -31,6 +31,7 @@ func (dcfParams *DCFParameters) Summary() (DCF, error) {
 	symbol := dcfParams.Ticker
 	cashflow := dto.CashflowReport{Symbol: symbol}
 	balanceSheet := dto.BalanceSheet{Symbol: symbol}
+	quote := dto.Quote{GlobalQuote: dto.GlobalQuote{Symbol: symbol}}
 
 	err := cashflow.Init()
 	if err != nil {
@@ -44,19 +45,27 @@ func (dcfParams *DCFParameters) Summary() (DCF, error) {
 		return DCF{}, err
 	}
 
+	err = quote.Init()
+	if err != nil {
+		fmt.Println(err)
+		return DCF{}, err
+	}
+
 	return DCF{
 		DCFParameters:     dcfParams,
 		Symbol:            symbol,
 		FreeCashFlowTTM:   cashflow.FreeCashFlowTTM(),
 		SharesOutstanding: balanceSheet.SharesOutstanding(),
+		CurrentPrice:      float64(quote.GlobalQuote.Price),
 	}, nil
 }
 
 type DCF struct {
 	*DCFParameters
-	Symbol            string `json:"symbol"`
-	FreeCashFlowTTM   int    `json:"freeCashFlowTTM"`
-	SharesOutstanding int    `json:"sharesOutstanding"`
+	Symbol            string  `json:"symbol"`
+	FreeCashFlowTTM   int     `json:"freeCashFlowTTM"`
+	SharesOutstanding int     `json:"sharesOutstanding"`
+	CurrentPrice      float64 `json:"currentPrice"`
 }
 
 func (summary *DCF) ProjectedCash() []int {
@@ -85,4 +94,9 @@ func (summary *DCF) TerminalCash() int {
 
 func (summary *DCF) FairPrice() int {
 	return summary.TerminalCash() / summary.SharesOutstanding
+}
+
+func (summary *DCF) Upside() string {
+	percentage := float64(summary.FairPrice()) / summary.CurrentPrice
+	return fmt.Sprintf("%.2f", (percentage-1)*100)
 }

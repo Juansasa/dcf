@@ -1,0 +1,11 @@
+
+POST http://localhost:8080/dcf/AAPL HTTP/1.1
+content-type: application/json
+
+{
+	"cagr": 0.15,
+	"dicountRate": 0.08,
+	"perpetualGrowthRate": 0.02,
+	"exitCashFlowMultiple": 15,
+	"projectedYears": 5
+}

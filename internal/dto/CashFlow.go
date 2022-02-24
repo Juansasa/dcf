@@ -76,6 +76,9 @@ type CashflowReport struct {
 }
 
 func (report *CashflowReport) FreeCashFlowTTM() int {
+	if len(report.QuarterlyReports) < 4 {
+		return 0
+	}
 	cashflowTTM := report.QuarterlyReports[0:4]
 	total := 0
 

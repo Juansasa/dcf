@@ -6,8 +6,9 @@ import (
 	"net/url"
 )
 
-const API_KEY = ""
-const BASE_URL = "https://www.alphavantage.co/query?apikey=NP26C2EFBOBNTUWL"
+const API_KEY1 = "NP26C2EFBOBNTUWL"
+const API_KEY2 = "CFB31V1MI5HDKIA8"
+const BASE_URL = "https://www.alphavantage.co/query?apikey=" + API_KEY2
 
 const (
 	CASHFLOW          = "CASH_FLOW"
@@ -16,6 +17,7 @@ const (
 	EARNINGS          = "EARNINGS"
 	OVERVIEW          = "OVERVIEW"
 	EARNINGS_CALENDAR = "EARNINGS_CALENDAR"
+	GLOBAL_QUOTE      = "GLOBAL_QUOTE"
 )
 
 type FinancialQuery struct {
